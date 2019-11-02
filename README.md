@@ -27,3 +27,11 @@ Below is a preview of a couple columns we'll work with from the tafe_survey.csv:
 First, we'll read in the datasets and do some initial exporation.
 Import the pandas and NumPy libraries. Reading the __dete_survey.csv__ CSV file into pandas, and assign it to the variable name dete_survey. Reading the __tafe_survey.csv__ CSV file into pandas, and assign it to the variable name tafe_survey.
 Useing the __DataFrame.info()__ and __DataFrame.head()__ methods to print information about both dataframes, as well as the first few rows. Useing other data exploration methods such as the __Series.value_counts()__ and __DataFrame.isnull()__ methods to explore the data and figure out some next steps.
+__Output:__
+We can make the following observations based on the work above:
+
+The dete_survey dataframe contains 'Not Stated' values that indicate values are missing, but they aren't represented as NaN.
+Both the dete_survey and tafe_survey contain many columns that we don't need to complete our analysis.
+Each dataframe contains many of the same columns, but the column names are different.
+There are multiple columns/answers that indicate an employee resigned because they were dissatisfied.
+To start, we'll handle the first two issues. Recall that we can use the pd.read_csv() function to specify values that should be represented as NaN. We'll use this function to fix the missing values first. Then, we'll drop columns we know we don't need for our analysis.
