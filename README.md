@@ -64,3 +64,26 @@ Next, we'll standardize the names of the columns we want to work with, because w
   - 'LengthofServiceCurrent. Length of Service at current workplace (in years)': 'role_service'
 
 Use the DataFrame.head() method to look at the current state of the dete_survey_updated and tafe_survey_updated dataframes and make sure your changes look good.
+
+### 4. Filter the Data
+Next, let's remove more of the data we don't need.
+
+If we look at the unique values in the 'separationtype' columns in each dataframe, we'll see that each contains a couple of different separation types.For this project, we'll only analyze survey respondents who resigned, so we'll only select separation types containing the string 'Resignation'.
+Note that dete_survey_updated dataframe contains multiple separation types with the string 'Resignation':
+
+- Resignation-Other reasons
+- Resignation-Other employer
+- Resignation-Move overseas/interstate
+
+- Use the Series.value_counts() method to review the unique values in the separationtype column in both dete_survey_updated and tafe_survey_updated.
+- In each of dataframes, select only the data for survey respondents who have a Resignation separation type.
+  - Remember that the dete_survey_updated dataframe contains three Resignation separation types. We want to select all of them.
+  - Use the DataFrame.copy() method on the result to avoid the SettingWithCopy Warning.
+  - Assign the result for dete_survey_updated to dete_resignations.
+  - Assign the reuslt for tafe_survey_updated to tafe_resignations.
+  
+### 5. Verify the Data
+Below, we clean and explore the cease_date and dete_start_date columns to make sure all of the years make sense. We'll use the following criteria:
+
+- Since the cease_date is the last year of the person's employment and the dete_start_date is the person's first year of employment, it wouldn't make sense to have years after the current date.
+- Given that most people in this field start working in their 20s, it's also unlikely that the dete_start_date was before the year 1940.
