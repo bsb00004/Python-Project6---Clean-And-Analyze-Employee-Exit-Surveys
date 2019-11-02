@@ -28,14 +28,13 @@ First, we'll read in the datasets and do some initial exporation.
 Import the pandas and NumPy libraries. Reading the __dete_survey.csv__ CSV file into pandas, and assigning it to the variable name dete_survey. Reading the __tafe_survey.csv__ CSV file into pandas, and assigning it to the variable name tafe_survey.
 Using the __DataFrame.info()__ and __DataFrame.head()__ methods to print information about both dataframes, as well as the first few rows. Using other data exploration methods such as the __Series.value_counts()__ and __DataFrame.isnull()__ methods to explore the data and figure out some next steps.
 ```diff
-Output:
-```
-We can make the following observations based on the work above:
+- Output: We can make the following observations based on the work above:
 
 - The dete_survey dataframe contains 'Not Stated' values that indicate values are missing, but they aren't represented as NaN.
 - Both the dete_survey and tafe_survey contain many columns that we don't need to complete our analysis.
 - Each dataframe contains many of the same columns, but the column names are different.
 - There are multiple columns/answers that indicate an employee resigned because they were dissatisfied.
+```
 
 ### 2. Identify Missing Values and Drop Unneccessary Columns
 First, we'll correct the Not Stated values and drop some of the columns we don't need for our analysis.
@@ -99,9 +98,11 @@ Check the years in each dataframe for logical inconsistencies.
   - Because Series.value_counts() returns a series, we can use Series.sort_index() method with ascending= True or False to view the highest and lowest values with their counts.
 - You can also plot the values of any numeric columns with a boxplot to identify any values that look wrong.
 
-<font color=red>__Output:__</font> Below are our findings:
+```diff
+- Output:Below are our findings:
 
 - The years in both dataframes don't completely align. The tafe_survey_updated dataframe contains some cease dates in 2009, but the dete_survey_updated dataframe does not. The tafe_survey_updated dataframe also contains many more cease dates in 2010 than the dete_survey_updaed dataframe. Since we aren't concerned with analyzing the results by year, we'll leave them as is.
+```
 
 ### 6. Create a New Column
 Since our end goal is to answer the question below, we need a column containing the length of time an employee spent in their workplace, or years of service, in both dataframes.
