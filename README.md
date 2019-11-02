@@ -1,5 +1,3 @@
-```diff
-+ text in red
 ### Python Project6: PANDAS: Clean And Analyze Employee Exit Surveys
 In this project, we'll clean and analyze exit surveys from employees of the [Department of Education, Training and Employment (DETE)](https://en.wikipedia.org/wiki/Department_of_Education_and_Training_(Queensland)) and the Technical and Further Education (TAFE) body of the Queensland government in Australia. The TAFE exit survey here can be found [here](https://data.gov.au/dataset/ds-qld-89970a3b-182b-41ea-aea2-6f9f17b5907e/details?q=exit%20survey) and the survey for the DETE can be found [here](https://data.gov.au/dataset/ds-qld-fe96ff30-d157-4a81-851d-215f2a0fe26d/details?q=exit%20survey).
 
@@ -29,7 +27,13 @@ Below is a preview of a couple columns we'll work with from the tafe_survey.csv:
 First, we'll read in the datasets and do some initial exporation.
 Import the pandas and NumPy libraries. Reading the __dete_survey.csv__ CSV file into pandas, and assigning it to the variable name dete_survey. Reading the __tafe_survey.csv__ CSV file into pandas, and assigning it to the variable name tafe_survey.
 Using the __DataFrame.info()__ and __DataFrame.head()__ methods to print information about both dataframes, as well as the first few rows. Using other data exploration methods such as the __Series.value_counts()__ and __DataFrame.isnull()__ methods to explore the data and figure out some next steps.
-
+```diff
+- text in red
++ text in green
+! text in orange
+- Output:
+# text in gray
+```
 + Output:
 We can make the following observations based on the work above:
 
