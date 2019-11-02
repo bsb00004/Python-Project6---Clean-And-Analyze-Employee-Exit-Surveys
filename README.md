@@ -1,5 +1,5 @@
 ### Python Project6: PANDAS: Clean And Analyze Employee Exit Surveys
-In this project, we'll clean and analyze exit surveys from employees of the [Department of Education, Training and Employment (DETE)](https://en.wikipedia.org/wiki/Department_of_Education_and_Training_(Queensland) and the Technical and Further Education (TAFE) body of the Queensland government in Australia. The TAFE exit survey here can be found here and the survey for the DETE can be found here.
+In this project, we'll clean and analyze exit surveys from employees of the [Department of Education, Training and Employment (DETE)](https://en.wikipedia.org/wiki/Department_of_Education_and_Training_(Queensland)) and the Technical and Further Education (TAFE) body of the Queensland government in Australia. The TAFE exit survey here can be found here and the survey for the DETE can be found here.
 
 Our stakeholders want us to combine the results for both surveys to answer the following questions:
 
