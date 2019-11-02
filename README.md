@@ -152,4 +152,7 @@ Finally, we'll replace the missing values in the dissatisfied column with the mo
 Note that since we still have additional missing values left to deal with, this is meant to be an initial introduction to the analysis, not the final analysis.
 
 _____________________________________________xxx__________________________xxx___________________________________________________________
+
 From the initial analysis above, we can tentatively conclude that employees with 7 or more years of service are more likely to resign due to some kind of dissatisfaction with the job than employees with less than 7 years of service. However, we need to handle the rest of the missing data to finalize our analysis.
+
+__NOTE:__ THe Python File is Well Commented
