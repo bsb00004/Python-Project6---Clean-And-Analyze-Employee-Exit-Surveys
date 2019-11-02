@@ -28,7 +28,7 @@ First, we'll read in the datasets and do some initial exporation.
 Import the pandas and NumPy libraries. Reading the __dete_survey.csv__ CSV file into pandas, and assigning it to the variable name dete_survey. Reading the __tafe_survey.csv__ CSV file into pandas, and assigning it to the variable name tafe_survey.
 Using the __DataFrame.info()__ and __DataFrame.head()__ methods to print information about both dataframes, as well as the first few rows. Using other data exploration methods such as the __Series.value_counts()__ and __DataFrame.isnull()__ methods to explore the data and figure out some next steps.
 
-__Output:__
+<font color=red>__Output:__</font>
 We can make the following observations based on the work above:
 
 - The dete_survey dataframe contains 'Not Stated' values that indicate values are missing, but they aren't represented as NaN.
@@ -98,7 +98,7 @@ Check the years in each dataframe for logical inconsistencies.
   - Because Series.value_counts() returns a series, we can use Series.sort_index() method with ascending= True or False to view the highest and lowest values with their counts.
 - You can also plot the values of any numeric columns with a boxplot to identify any values that look wrong.
 
-__Output:__ Below are our findings:
+<font color=red>__Output:__</font> Below are our findings:
 
 - The years in both dataframes don't completely align. The tafe_survey_updated dataframe contains some cease dates in 2009, but the dete_survey_updated dataframe does not. The tafe_survey_updated dataframe also contains many more cease dates in 2010 than the dete_survey_updaed dataframe. Since we aren't concerned with analyzing the results by year, we'll leave them as is.
 
