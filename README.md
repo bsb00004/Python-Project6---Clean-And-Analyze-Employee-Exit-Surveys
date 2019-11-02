@@ -52,14 +52,15 @@ Next, we'll standardize the names of the columns we want to work with, because w
   - Replace spaces with underscores ('_').
   - As an example, Cease Date should be updated to cease_date.
   - Remember you can use the DataFrame.columns attribute to print an array of the existing column names.
-- Use the DataFrame.rename() method to update the columns below in tafe_survey_updated. Don't worry about the rest of the column names right now - we'll handle them later.
-'Record ID': 'id'
-'CESSATION YEAR': 'cease_date'
-'Reason for ceasing employment': 'separationtype'
-'Gender. What is your Gender?': 'gender'
-'CurrentAge. Current Age': 'age'
-'Employment Type. Employment Type': 'employment_status'
-'Classification. Classification': 'position'
-'LengthofServiceOverall. Overall Length of Service at Institute (in years)': 'institute_service'
-'LengthofServiceCurrent. Length of Service at current workplace (in years)': 'role_service'
+- Using the DataFrame.rename() method to update the columns below in tafe_survey_updated. We'll handle rest of the column names later.
+  - 'Record ID': 'id'
+  - 'CESSATION YEAR': 'cease_date'
+  - 'Reason for ceasing employment': 'separationtype'
+  - 'Gender. What is your Gender?': 'gender'
+  - 'CurrentAge. Current Age': 'age'
+  - 'Employment Type. Employment Type': 'employment_status'
+  - 'Classification. Classification': 'position'
+  - 'LengthofServiceOverall. Overall Length of Service at Institute (in years)': 'institute_service'
+  - 'LengthofServiceCurrent. Length of Service at current workplace (in years)': 'role_service'
+
 Use the DataFrame.head() method to look at the current state of the dete_survey_updated and tafe_survey_updated dataframes and make sure your changes look good.
