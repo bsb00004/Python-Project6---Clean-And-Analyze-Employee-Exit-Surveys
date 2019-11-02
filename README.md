@@ -87,3 +87,68 @@ Below, we clean and explore the cease_date and dete_start_date columns to make s
 
 - Since the cease_date is the last year of the person's employment and the dete_start_date is the person's first year of employment, it wouldn't make sense to have years after the current date.
 - Given that most people in this field start working in their 20s, it's also unlikely that the dete_start_date was before the year 1940.
+
+Check the years in each dataframe for logical inconsistencies.
+
+- First, clean the cease_date column in dete_resignations.
+  - Use the Series.value_counts() method to view the unique values in the cease_date column.
+  - Use vectorized string methods to extract the year. As a reminder, here is the full list.
+  - Use the Series.astype() method method to convert the type to a float.
+- Use the Series.value_counts() to check the values in the cease_date and dete_start_date columns in dete_resignations and the cease_date column in tafe_resignations.
+  - Because Series.value_counts() returns a series, we can use Series.sort_index() method with ascending= True or False to view the highest and lowest values with their counts.
+- You can also plot the values of any numeric columns with a boxplot to identify any values that look wrong.
+
+__Output:__ Below are our findings:
+
+- The years in both dataframes don't completely align. The tafe_survey_updated dataframe contains some cease dates in 2009, but the dete_survey_updated dataframe does not. The tafe_survey_updated dataframe also contains many more cease dates in 2010 than the dete_survey_updaed dataframe. Since we aren't concerned with analyzing the results by year, we'll leave them as is.
+
+### 6. Create a New Column
+Since our end goal is to answer the question below, we need a column containing the length of time an employee spent in their workplace, or years of service, in both dataframes.
+
+- End goal: Are employees who have only worked for the institutes for a short period of time resigning due to some kind of dissatisfaction? What about employees who have been at the job longer?
+The tafe_resignations dataframe already contains a "service" column, which we renamed to institute_service.
+
+Below, we calculate the years of service in the dete_survey_updated dataframe by subtracting the dete_start_date from the cease_date and create a new column named institute_service.
+
+### 7. Identify Dissatisfied Employees
+Next, we'll identify any employees who resigned because they were dissatisfied. Below are the columns we'll use to categorize employees as "dissatisfied" from each dataframe:
+
+1. tafe_survey_updated:
+  - Contributing Factors. Dissatisfaction
+  - Contributing Factors. Job Dissatisfaction
+2. dafe_survey_updated:
+  - job_dissatisfaction
+  - dissatisfaction_with_the_department
+  - physical_work_environment
+  - lack_of_recognition
+  - lack_of_job_security
+  - work_location
+  - employment_conditions
+  - work_life_balance
+  - workload
+  
+If the employee indicated any of the factors above caused them to resign, we'll mark them as dissatisfied in a new column. After our changes, the new dissatisfied column will contain just the following values:
+
+- True: indicates a person resigned because they were dissatisfied in some way
+- False: indicates a person resigned because of a reason other than dissatisfaction with the job
+- NaN: indicates the value is missing
+
+### 8. Combining the Data
+Below, we'll add an institute column so that we can differentiate the data from each survey after we combine them. Then, we'll combine the dataframes and drop any remaining columns we don't need.
+
+### 9. Clean the Service Column
+Next, we'll clean the institute_service column and categorize employees according to the following definitions:
+
+- New: Less than 3 years in the workplace
+- Experienced: 3-6 years in the workplace
+- Established: 7-10 years in the workplace
+- Veteran: 11 or more years in the workplace
+
+The analysis is based on [this article](https://www.businesswire.com/news/home/20171108006002/en/Age-Number-Engage-Employees-Career-Stage), which makes the argument that understanding employee's needs according to career stage instead of age is more effective.
+
+### 10. Perform Some Initial Analysis
+Finally, we'll replace the missing values in the dissatisfied column with the most frequent value, False. Then, we'll calculate the percentage of employees who resigned due to dissatisfaction in each service_cat group and plot the results.
+
+Note that since we still have additional missing values left to deal with, this is meant to be an initial introduction to the analysis, not the final analysis.
+_____________________________________________xxx__________________________xxx___________________________________________________________
+From the initial analysis above, we can tentatively conclude that employees with 7 or more years of service are more likely to resign due to some kind of dissatisfaction with the job than employees with less than 7 years of service. However, we need to handle the rest of the missing data to finalize our analysis.
