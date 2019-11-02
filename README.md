@@ -23,5 +23,7 @@ Below is a preview of a couple columns we'll work with from the tafe_survey.csv:
 - LengthofServiceOverall. Overall Length of Service at Institute (in years): The length of the person's employment (in years)
 - Let's start by reading the datasets into pandas and exploring them.
 
-1. Introduction
+### 1. Introduction
 First, we'll read in the datasets and do some initial exporation.
+Import the pandas and NumPy libraries. Reading the __dete_survey.csv__ CSV file into pandas, and assign it to the variable name dete_survey. Reading the __tafe_survey.csv__ CSV file into pandas, and assign it to the variable name tafe_survey.
+Useing the __DataFrame.info()__ and __DataFrame.head()__ methods to print information about both dataframes, as well as the first few rows. Useing other data exploration methods such as the __Series.value_counts()__ and __DataFrame.isnull()__ methods to explore the data and figure out some next steps.
